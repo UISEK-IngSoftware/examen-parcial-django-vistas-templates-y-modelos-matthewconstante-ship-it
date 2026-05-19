@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Detalles</title>
+    <style>
+        body { font-family: sans-serif; background-color: #f4f6f9; margin: 0; padding: 0; }
+        .header { background-color: #1a252f; color: white; padding: 20px; text-align: center; }
+        .container { max-width: 600px; margin: 30px auto; background: white; padding: 25px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .info { margin-bottom: 12px; font-size: 1.05rem; }
+        .synopsis { background: #f8f9fa; padding: 15px; border-left: 4px solid #1a252f; font-style: italic; }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>🎬 MI SITIO DE PELÍCULAS</h1>
+    </div>
+
+    <div class="container">
+        <h2>Detalles de la Película</h2>
+        <hr><br>
+        
+        <div class="info"><strong>ID:</strong> {{ movie.id }}</div>
+        <div class="info"><strong>Título:</strong> {{ movie.title }}</div>
+        <div class="info"><strong>Género:</strong> {{ movie.genre }}</div>
+        <div class="info"><strong>Director:</strong> {{ movie.director }}</div>
+        <div class="info"><strong>Año de publicación:</strong> {{ movie.release_year }}</div>
+        <div class="info"><strong>Sinopsis:</strong></div>
+        <div class="synopsis">{{ movie.synopsis }}</div>
+
+        <br><br>
+        <a href="{% url 'movie_index' %}" style="color: #0066cc; font-weight: bold; text-decoration: none;">⬅ Volver al Listado</a>
+    </div>
+
+</body>
+</html>

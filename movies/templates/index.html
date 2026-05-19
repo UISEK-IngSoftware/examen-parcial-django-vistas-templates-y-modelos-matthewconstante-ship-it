@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Cartelera de Películas</title>
+    <style>
+        body { font-family: sans-serif; background-color: #f4f6f9; margin: 0; padding: 0; }
+        .header { background-color: #1a252f; color: white; padding: 20px; text-align: center; }
+        .container { max-width: 600px; margin: 30px auto; background: white; padding: 25px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        ul { list-style: none; padding: 0; }
+        li { padding: 12px; border-bottom: 1px solid #eee; }
+        .movie-link { font-weight: bold; color: #0066cc; text-decoration: none; font-size: 1.1rem; }
+        .movie-link:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>🎬 MI SITIO DE PELÍCULAS</h1>
+    </div>
+
+    <div class="container">
+        <h2>Listado de Películas</h2>
+        <hr>
+        <ul>
+            {% for movie in movies %}
+                <li>
+                    <a href="{% url 'movie_detail' movie.id %}" class="movie-link">
+                        {{ movie.title }} - {{ movie.release_year }}
+                    </a>
+                </li>
+            {% empty %}
+                <p>No hay películas registradas.</p>
+            {% endfor %}
+        </ul>
+    </div>
+
+</body>
+</html>
